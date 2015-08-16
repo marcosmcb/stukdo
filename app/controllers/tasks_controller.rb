@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   respond_to :html
 
   def index
-    @tasks = Task.all
+    @tasks = current_user.tasks
     respond_with(@tasks)
   end
 
@@ -21,7 +21,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(task_params)
+    @task = current_user.tasks.new(task_params)
     @task.save
     respond_with(@task)
   end
