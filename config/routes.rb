@@ -14,6 +14,7 @@ Stukdo::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'pages#home'
   get 'about' => 'pages#about'
+  get 'test' => "pages#test"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
